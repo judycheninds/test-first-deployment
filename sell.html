@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell a Card - Hoop Vault</title>
+    <meta name="description" content="Sell your premium NBA trading cards securely with Hoop Vault.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">HOOP VAULT</div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="category.html?type=all">Buy Cards</a>
+            <a href="sell.html" class="active">Sell Cards</a>
+            <a href="#">Live Auctions</a>
+        </nav>
+        <div class="user-actions">
+            <div class="search-bar">
+                <input type="text" placeholder="Search players, sets, grading...">
+                <button aria-label="Search" class="search-btn">🔍</button>
+            </div>
+            <button class="icon-btn" id="cart-btn" aria-label="Cart" data-count="0">🛒</button>
+            <button class="login-btn">Sign In</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sell-section">
+            <div class="sell-container">
+                <h1 class="section-title" style="text-align: center;">Sell Your Cards</h1>
+                <p class="sell-subtitle" style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">Submit your premium graded or raw cards to our global marketplace of collectors.</p>
+
+                <form class="sell-form" id="sellForm">
+                    <div class="form-group">
+                        <label for="player">Player Name</label>
+                        <input type="text" id="player" name="player" placeholder="e.g. Kobe Bryant" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="series">Brand / Series</label>
+                            <input type="text" id="series" name="series" placeholder="e.g. Topps Chrome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" placeholder="e.g. 1996" min="1900" max="2026" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="grade">Grading</label>
+                            <select id="grade" name="grade" required>
+                                <option value="" disabled selected>Select condition/grade</option>
+                                <option value="PSA 10">PSA 10 Gem Mint</option>
+                                <option value="PSA 9">PSA 9 Mint</option>
+                                <option value="BGS 9.5">BGS 9.5 Gem Mint</option>
+                                <option value="BGS 9">BGS 9 Mint</option>
+                                <option value="Raw">Raw (Ungraded)</option>
+                                <option value="Other">Other Grader</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Asking Price ($)</label>
+                            <input type="number" id="price" name="price" placeholder="e.g. 500" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Additional Details (Optional)</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Any special notes about centering, edges, serial numbering (e.g. /10), etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Images</label>
+                        <div class="image-upload-area">
+                            <div class="upload-icon">📸</div>
+                            <p>Drag & drop front and back images here, or <span>browse</span></p>
+                            <p class="upload-hint">Supported formats: JPG, PNG. Max size: 5MB.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="primary-btn pulse-anim" style="width: 100%;">Submit Listing</button>
+                    </div>
+                </form>
+                
+                <div id="successMessage" class="success-message" style="display: none; text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(0,255,0,0.1); border: 1px solid #00ff00; border-radius: 12px;">
+                    <h3 style="color: #00ff00; margin-bottom: 0.5rem;">Listing Submitted Successfully!</h3>
+                    <p style="color: var(--text-primary);">Our curation team will review your card and list it on the marketplace within 24 hours.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">HOOP VAULT</div>
+                <p>The premier destination for basketball card collectors and investors.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Marketplace</h4>
+                <a href="category.html?type=all">Buy Cards</a>
+                <a href="sell.html">Sell Cards</a>
+                <a href="#">Auctions</a>
+                <a href="#">Pricing Guide</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Authentication</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hoop Vault Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('sellForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+</body>
+</html>

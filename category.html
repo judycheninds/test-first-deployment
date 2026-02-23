@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoop Vault - Premium NBA Trading Cards</title>
+    <meta name="description" content="Buy and sell premium NBA trading cards securely.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">HOOP VAULT</div>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="category.html?type=all" class="active">Buy Cards</a>
+            <a href="sell.html">Sell Cards</a>
+            <a href="#">Live Auctions</a>
+        </nav>
+        <div class="user-actions">
+            <div class="search-bar">
+                <input type="text" placeholder="Search players, sets, grading...">
+                <button aria-label="Search" class="search-btn">🔍</button>
+            </div>
+            <button class="icon-btn" id="cart-btn" aria-label="Cart" data-count="0">🛒</button>
+            <button class="login-btn">Sign In</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>The Ultimate<br><span class="highlight">NBA Card Marketplace</span></h1>
+                <p>Buy, sell, and trade premium basketball trading cards, rookie cards, and rare autographed
+                    memorabilia.</p>
+                <div class="hero-actions">
+                    <button class="primary-btn pulse-anim">Start Browsing</button>
+                    <button class="secondary-btn">Sell a Card</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="storefront" style="padding-top: 2rem;">
+            <div style="width: 100%;">
+                <div class="toolbar" style="margin-bottom: 2rem;">
+                    <div>
+                        <a href="index.html"
+                            style="color: var(--text-secondary); text-decoration: none; margin-bottom: 1rem; display: inline-block;">←
+                            Back to Home</a>
+                        <h2 class="section-title" id="categoryTitle" style="margin-bottom: 0;">Loading Category...</h2>
+                    </div>
+                    <div class="sort-container">
+                        <label for="sortDropdown">Sort By: </label>
+                        <select id="sortDropdown" class="sort-dropdown">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest Arrivals</option>
+                            <option>Highest Graded</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid" id="productGrid">
+                    <!-- Products will be generated dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">HOOP VAULT</div>
+                <p>The premier destination for basketball card collectors and investors.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Marketplace</h4>
+                <a href="#">Buy Cards</a>
+                <a href="#">Sell Cards</a>
+                <a href="#">Auctions</a>
+                <a href="#">Pricing Guide</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Authentication</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hoop Vault Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="category_script.js"></script>
+</body>
+
+</html>
